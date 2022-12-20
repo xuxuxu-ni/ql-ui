@@ -1,0 +1,42 @@
+{
+  "name": "ql-ui-project",
+  "version": "0.0.0",
+  "description": "ql-ui组件库",
+  "scripts": {
+    "dev": "pnpm -C examples dev",
+    "dev:docs": "pnpm -C docs run docs:dev",
+    "build": "pnpm -C packages run build && pnpm -C packages/theme-chalk run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git add -A && git-cz",
+    "release": "pnpm -C ql-ul release",
+    "prepare": "husky install"
+  },
+  "author": "NiRongxu",
+  "license": "ISC",
+  "dependencies": {
+    "@ql-ui/components": "workspace:^1.0.0",
+    "@ql-ui/theme-chalk": "workspace:^1.0.0",
+    "@ql-ui/utils": "workspace:^1.0.0",
+    "@vicons/ionicons5": "^0.12.0",
+    "vue": "^3.2.36"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "commitizen": "^4.2.5",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.26.0",
+    "eslint-plugin-vue": "^9.8.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "mrm": "^4.1.13",
+    "release-it": "^15.5.0",
+    "sass": "^1.55.0",
+    "typescript": "^4.8.4",
+    "unplugin-vue-define-options": "^0.12.3",
+    "vite-plugin-dts": "^1.7.1"
+  }
+
+}

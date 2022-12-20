@@ -1,0 +1,38 @@
+@use 'config' as *;
+@forward 'config';
+
+// ql-icon
+@mixin b($block) {
+  $B: $namespace + '-' + $block;
+  .#{$B} {
+    @content;
+  }
+}
+
+// ql-icon.is-xxx
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+// .ql-icon--primary
+
+@mixin m($modifier) {
+  @at-root {
+    #{& + $modifier-separator + $modifier} {
+      @content;
+    }
+  }
+}
+
+// ql-icon__header
+@mixin e($element) {
+  @at-root {
+    #{& + $element-separator + $element} {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@use './mixins/mixins.scss' as *;
+
+$typeList: 'primary', 'success', 'info', 'warning', 'danger';
+@include b(button) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--color-text-dark);
+  outline: none;
+  transition: .1s;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--color-white);
+  border: 1px solid;
+  border-color: var(--color-border);
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  &:hover, &:focus {
+    color: var(--color-primary);
+    border-color: var(--color-primary-shallow);
+    background-color: var(--color-primary-shallow);
+  }
+
+  &:active {
+    border-color: var(--color-primary);
+  }
+
+  @include when(plain) {
+    color: var(--color-text-dark);
+    background: var(--color-white);
+    border-color: var(--color-border);
+    &:hover, &:focus {
+      color: var(--color-primary);
+      background-color: var(--color-white);
+      border-color: var(--color-primary);
+    }
+  }
+
+  @include when('text') {
+    color: var(--color-text-dark);
+    border-color: transparent;
+    background-color: transparent;
+    &:hover, &:focus {
+      color: var(--color-text-dark);
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &:active {
+      color: var(--color-text-dark-active);
+    }
+  }
+
+  @each $type in $typeList {
+    @include m($type) {
+      color: var(--color-text-light);
+      background-color: var(--color-#{$type});
+      border-color: var(--color-#{$type});
+      &:hover, &:focus {
+        background: var(--color-#{$type}-hover);
+        border-color: var(--color-#{$type}-hover);
+        color: var(--color-text-light);
+      }
+      &:active {
+        background: var(--color-#{$type}-active);
+        border-color: var(--color-#{$type}-active);
+        color: var(--color-text-light);
+      }
+
+      @include when(plain) {
+        color: var(--color-#{$type});
+        background: var(--color-#{$type}-shallow);
+        border-color: var(--color-#{$type});
+        &:hover, &:focus {
+          color: var(--color-text-light);
+          background-color: var(--color-#{$type});
+          border-color: var(--color-#{$type});
+        }
+        &:active {
+          background: var(--color-#{$type}-active);
+          border-color: var(--color-#{$type}-active);
+          color: var(--color-text-light);
+        }
+      }
+      @include when(text) {
+        color: var(--color-#{$type});
+        border-color: transparent;
+        background-color: transparent;
+        &:hover, &:focus {
+          color: var(--color-#{$type});
+          background-color: transparent;
+          border-color: transparent;
+        }
+        &:active {
+          color: var(--color-#{$type}-active);
+        }
+      }
+      //@include when('text') {
+      //  color: var(--color-#{$type});
+      //  border-color: transparent;
+      //  background-color: transparent;
+      //  &:hover, &:focus {
+      //    color: var(--color-#{$type});
+      //    background-color: var(--color-#{$type}-shallow);
+      //    border-color: transparent;
+      //  }
+      //}
+    }
+
+    @include when(disabled) {
+      color: #c0c4cc;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: #fff;
+      border-color: #ebeef5;
+      &:active, &:focus, &:hover {
+        color: #fff;
+        background-color: #a0cfff;
+        border-color: #a0cfff;
+      }
+    }
+
+
+
+    @include m(medium) {
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+    @include m(small) {
+      padding: 9px 15px;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+    @include m(mini) {
+      padding: 7px 15px;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+    @include when(round) {
+      border-radius: 20px;
+    }
+  }
+}
+
+
+
+

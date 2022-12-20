@@ -1,0 +1,16 @@
+{
+  "name": "examples",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "vite": "^3.1.0",
+    "vue-tsc": "^0.40.4"
+  }
+}

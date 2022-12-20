@@ -1,0 +1,29 @@
+{
+  "name": "@ql-ui/core",
+  "version": "0.0.1",
+  "description": "ql-ui组件库",
+  "main": "./core/lib/components/index.js",
+  "module": "./core/es/components/index.js",
+  "typings": "./core/es/components/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./core/es/components/index.js",
+      "require": "./core/lib/components/index.js"
+    }
+    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vue-tsc --noEmit && vite build",
+    "release": "release-it"
+  },
+  "files": [
+    "core",
+    "package.json"
+  ],
+  "author": {
+    "name": "酒一壶||茶一盏",
+    "email": "595485548@qq.com",
+    "url": "https://github.com/xuxuxu-ni"
+  },
+  "license": "MIT"
+}
