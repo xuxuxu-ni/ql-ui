@@ -1,12 +1,13 @@
 @use './mixins/mixins.scss' as *;
 
 $typeList: 'primary', 'success', 'info', 'warning', 'danger';
+// 基础样式
 @include b(button) {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   line-height: 1;
-  height: 32px;
+  height: 30px;
   white-space: nowrap;
   cursor: pointer;
   color: var(--color-text-dark);
@@ -18,7 +19,7 @@ $typeList: 'primary', 'success', 'info', 'warning', 'danger';
   background-color: var(--color-white);
   border: 1px solid;
   border-color: var(--color-border);
-  padding: 8px 15px;
+  padding: 0 15px;
   font-size: 14px;
   border-radius: 4px;
   &:hover, &:focus {
@@ -26,22 +27,35 @@ $typeList: 'primary', 'success', 'info', 'warning', 'danger';
     border-color: var(--color-primary-shallow);
     background-color: var(--color-primary-shallow);
   }
-
   &:active {
     border-color: var(--color-primary);
   }
 
+ // plain 基础样式
   @include when(plain) {
     color: var(--color-text-dark);
-    background: var(--color-white);
     border-color: var(--color-border);
+    background: var(--color-white);
     &:hover, &:focus {
       color: var(--color-primary);
-      background-color: var(--color-white);
       border-color: var(--color-primary);
+      background-color: var(--color-white);
     }
   }
 
+  // 禁用样式
+  @include when(disabled) {
+    cursor: not-allowed;
+    color: var(--color-text-disabled);
+    border-color: var(--color-border);
+    &:hover, &:focus {
+      color: var(--color-text-disabled);
+      border-color: var(--color-border);
+      background-color: var(--color-white);
+    }
+  }
+
+  // text 基础样式
   @include when('text') {
     color: var(--color-text-dark);
     border-color: transparent;
@@ -56,6 +70,7 @@ $typeList: 'primary', 'success', 'info', 'warning', 'danger';
     }
   }
 
+  // 状态样式
   @each $type in $typeList {
     @include m($type) {
       color: var(--color-text-light);
@@ -72,21 +87,47 @@ $typeList: 'primary', 'success', 'info', 'warning', 'danger';
         color: var(--color-text-light);
       }
 
+      // 带状态按钮禁用样式
+      @include when(disabled) {
+        cursor: not-allowed;
+        color: var(--color-text-light);
+        border-color: var(--color-#{$type}-disabled);
+        background: var(--color-#{$type}-disabled);
+        &:hover, &:focus {
+          color: var(--color-text-light);
+          border-color: var(--color-#{$type}-disabled);
+          background: var(--color-#{$type}-disabled);
+        }
+      }
+
+      // plain 带状态样式
       @include when(plain) {
         color: var(--color-#{$type});
         background: var(--color-#{$type}-shallow);
         border-color: var(--color-#{$type});
         &:hover, &:focus {
           color: var(--color-text-light);
-          background-color: var(--color-#{$type});
           border-color: var(--color-#{$type});
+          background-color: var(--color-#{$type});
         }
         &:active {
-          background: var(--color-#{$type}-active);
-          border-color: var(--color-#{$type}-active);
           color: var(--color-text-light);
+          border-color: var(--color-#{$type}-active);
+          background: var(--color-#{$type}-active);
+        }
+        // plain 格式禁用样式
+        @include when(disabled) {
+          cursor: not-allowed;
+          color: var(--color-#{$type}-shallow-text-disabled);
+          border-color: var(--color-#{$type}-shallow-border-disabled);
+          background: var(--color-#{$type}-shallow-disabled);
+          &:hover, &:focus {
+            background: var(--color-#{$type}-shallow-disabled);
+          }
         }
       }
+
+      //  text 带状态样式
       @include when(text) {
         color: var(--color-#{$type});
         border-color: transparent;
@@ -99,52 +140,22 @@ $typeList: 'primary', 'success', 'info', 'warning', 'danger';
         &:active {
           color: var(--color-#{$type}-active);
         }
-      }
-      //@include when('text') {
-      //  color: var(--color-#{$type});
-      //  border-color: transparent;
-      //  background-color: transparent;
-      //  &:hover, &:focus {
-      //    color: var(--color-#{$type});
-      //    background-color: var(--color-#{$type}-shallow);
-      //    border-color: transparent;
-      //  }
-      //}
-    }
-
-    @include when(disabled) {
-      color: #c0c4cc;
-      cursor: not-allowed;
-      background-image: none;
-      background-color: #fff;
-      border-color: #ebeef5;
-      &:active, &:focus, &:hover {
-        color: #fff;
-        background-color: #a0cfff;
-        border-color: #a0cfff;
+        // text 格式禁用样式
+        @include when(disabled) {
+          cursor: not-allowed;
+          color: var(--color-#{$type}-shallow-text-disabled);
+        }
       }
     }
-
-
-
-    @include m(medium) {
-      padding: 10px 20px;
-      font-size: 14px;
-      border-radius: 4px;
-    }
-    @include m(small) {
-      padding: 9px 15px;
-      font-size: 12px;
-      border-radius: 3px;
-    }
-    @include m(mini) {
-      padding: 7px 15px;
-      font-size: 12px;
-      border-radius: 3px;
-    }
-    @include when(round) {
-      border-radius: 20px;
-    }
+  }
+  @include m(large) {
+    padding: 0 18px;
+    height: 38px;
+  }
+  @include m(small) {
+    font-size: 12px;
+    padding: 0 12px;
+    height: 24px;
   }
 }
 

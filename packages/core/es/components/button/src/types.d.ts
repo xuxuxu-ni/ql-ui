@@ -14,6 +14,7 @@ export declare const buttonProps: {
     readonly plain: BooleanConstructor;
     readonly round: BooleanConstructor;
     readonly disabled: BooleanConstructor;
+    readonly text: BooleanConstructor;
     readonly size: {
         readonly type: StringConstructor;
         readonly validator: (value: string) => boolean;

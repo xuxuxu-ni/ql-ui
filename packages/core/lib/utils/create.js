@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 function _bem(prefixName, blockName, elementName, modifierName) {
   if (blockName) {
     prefixName += `-${blockName}`;

@@ -1,4 +1,4 @@
-const ButtonType = ["primary", "success", "info", "warning", "danger", "text"];
+const ButtonType = ["primary", "success", "info", "warning", "danger"];
 const ButtonSize = ["midium", "small", "mini"];
 const buttonProps = {
   type: {
@@ -10,6 +10,7 @@ const buttonProps = {
   plain: Boolean,
   round: Boolean,
   disabled: Boolean,
+  text: Boolean,
   size: {
     type: String,
     validator(value) {

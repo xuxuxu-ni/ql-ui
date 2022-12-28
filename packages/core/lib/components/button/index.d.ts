@@ -9,6 +9,7 @@ export declare const QlButton: import("@ql-ui/utils/withInstall").withInstallSFC
     readonly plain: BooleanConstructor;
     readonly round: BooleanConstructor;
     readonly disabled: BooleanConstructor;
+    readonly text: BooleanConstructor;
     readonly size: {
         readonly type: StringConstructor;
         readonly validator: (value: string) => boolean;
@@ -26,7 +27,7 @@ export declare const QlButton: import("@ql-ui/utils/withInstall").withInstallSFC
     };
     props: any;
     classList: import("vue").ComputedRef<any[]>;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<ExtractPropTypes<{
     readonly type: {
         readonly type: StringConstructor;
         readonly validator: (value: string) => boolean;
@@ -34,6 +35,7 @@ export declare const QlButton: import("@ql-ui/utils/withInstall").withInstallSFC
     readonly plain: BooleanConstructor;
     readonly round: BooleanConstructor;
     readonly disabled: BooleanConstructor;
+    readonly text: BooleanConstructor;
     readonly size: {
         readonly type: StringConstructor;
         readonly validator: (value: string) => boolean;
@@ -42,6 +44,7 @@ export declare const QlButton: import("@ql-ui/utils/withInstall").withInstallSFC
     readonly plain: boolean;
     readonly round: boolean;
     readonly disabled: boolean;
+    readonly text: boolean;
 }>>;
 export default QlButton;
 export declare type ButtonProps = ExtractPropTypes<typeof buttonProps>;

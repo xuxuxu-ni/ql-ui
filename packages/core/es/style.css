@@ -1,107 +1,572 @@
+:root {
+  --color-primary: #6173e1;
+  --color-primary-hover: #a1a9db;
+  --color-primary-active: #3b2e7e;
+  --color-primary-disabled: #959fd5;
+  --color-primary-shallow: #cad1ff;
+  --color-primary-shallow-disabled: #e0e4ff;
+  --color-primary-shallow-text-disabled: #99a2d5;
+  --color-primary-shallow-border-disabled: #b1bbfb;
+  --color-success: #96ce54;
+  --color-success-hover: #b0db7b;
+  --color-success-active: #789262;
+  --color-success-disabled: #aad5a6;
+  --color-success-shallow: #f4ffe6;
+  --color-success-shallow-disabled: #ecf3e4;
+  --color-success-shallow-text-disabled: #96c95a;
+  --color-success-shallow-border-disabled: #cae7a8;
+  --color-warning: #f0c239;
+  --color-warning-hover: #ffc773;
+  --color-warning-active: #ffa631;
+  --color-warning-disabled: #f1d9a2;
+  --color-warning-shallow: #fff7e1;
+  --color-warning-shallow-disabled: #fdf6e3;
+  --color-warning-shallow-text-disabled: #e7d296;
+  --color-warning-shallow-border-disabled: #e1dcce;
+  --color-danger: #db5a6b;
+  --color-danger-hover: #ef7a82;
+  --color-danger-active: #c91f37;
+  --color-danger-disabled: #c98790;
+  --color-danger-shallow: #ffdfe3;
+  --color-danger-shallow-disabled: #f1dcdf;
+  --color-danger-shallow-text-disabled: #cf7782;
+  --color-danger-shallow-border-disabled: #efb7bf;
+  --color-info: #7397ab;
+  --color-info-hover: #adc4d1;
+  --color-info-active: #395260;
+  --color-info-disabled: #a7c8d7;
+  --color-info-shallow: #e9f1f6;
+  --color-info-shallow-disabled: #e9f1f6;
+  --color-info-shallow-text-disabled: #9fc5db;
+  --color-info-shallow-border-disabled: #b1cbd9;
+  --color-text-dark: #50616d;
+  --color-text-dark-active: #3d3b4f;
+  --color-text-light: #f2fdff;
+  --color-text-disabled: #c2ccd0;
+  --color-white: #ffffff;
+  --color-border: #d1d9e0;
+}
+
 * {
   box-sizing: border-box;
 }
 
 .ql-button {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   line-height: 1;
+  height: 30px;
   white-space: nowrap;
   cursor: pointer;
-  background: #fff;
-  border: 1px solid #dcdfe6;
-  color: #606266;
-  -webkit-appearance: none;
-  text-align: center;
-  box-sizing: border-box;
+  color: var(--color-text-dark);
   outline: none;
-  margin: 0;
   transition: 0.1s;
-  font-weight: 500;
-  padding: 12px 20px;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--color-white);
+  border: 1px solid;
+  border-color: var(--color-border);
+  padding: 0 15px;
   font-size: 14px;
   border-radius: 4px;
 }
-.ql-button:hover {
-  color: #409eff;
-  border-color: #c6e2ff;
-  background-color: #ecf5ff;
+.ql-button:hover, .ql-button:focus {
+  color: var(--color-primary);
+  border-color: var(--color-primary-shallow);
+  background-color: var(--color-primary-shallow);
 }
-.ql-button--primary {
-  color: #fff;
-  background-color: #409eff;
-  border-color: #409eff;
+.ql-button:active {
+  border-color: var(--color-primary);
 }
-.ql-button--primary:hover {
-  background: #66b1ff;
-  border-color: #66b1ff;
-  color: #fff;
+.ql-button.is-plain {
+  color: var(--color-text-dark);
+  border-color: var(--color-border);
+  background: var(--color-white);
 }
-.ql-button--primary.is-plain {
-  color: #409eff;
-  background: #ecf5ff;
-  border-color: #b3d8ff;
-}
-.ql-button--primary.is-plain:hover {
-  color: #fff;
-  background-color: #409eff;
-  border-color: #409eff;
+.ql-button.is-plain:hover, .ql-button.is-plain:focus {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: var(--color-white);
 }
 
 .ql-button.is-disabled {
-  color: #c0c4cc;
   cursor: not-allowed;
-  background-image: none;
-  background-color: #fff;
-  border-color: #ebeef5;
+  color: var(--color-text-disabled);
+  border-color: var(--color-border);
 }
-.ql-button.is-disabled:active, .ql-button.is-disabled:focus, .ql-button.is-disabled:hover {
-  color: #fff;
-  background-color: #a0cfff;
-  border-color: #a0cfff;
-}
-
-.ql-button.is-plain {
-  color: #8cc5ff;
-  background-color: #ecf5ff;
-  border-color: #d9ecff;
-}
-.ql-button.is-plain:active, .ql-button.is-plain:focus, .ql-button.is-plain:hover {
-  color: #8cc5ff;
-  background-color: #ecf5ff;
-  border-color: #d9ecff;
+.ql-button.is-disabled:hover, .ql-button.is-disabled:focus {
+  color: var(--color-text-disabled);
+  border-color: var(--color-border);
+  background-color: var(--color-white);
 }
 
-.ql-button--text {
-  border-color: transparent;
-  color: #409eff;
-  background: transparent;
-  padding-left: 0;
-  padding-right: 0;
-}
-.ql-button--text:hover {
-  color: #66b1ff;
+.ql-button.is-text {
+  color: var(--color-text-dark);
   border-color: transparent;
   background-color: transparent;
 }
+.ql-button.is-text:hover, .ql-button.is-text:focus {
+  color: var(--color-text-dark);
+  border-color: transparent;
+  background-color: transparent;
+}
+.ql-button.is-text:active {
+  color: var(--color-text-dark-active);
+}
 
-.ql-button--medium {
-  padding: 10px 20px;
-  font-size: 14px;
-  border-radius: 4px;
+.ql-button--primary {
+  color: var(--color-text-light);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.ql-button--primary:hover, .ql-button--primary:focus {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-text-light);
+}
+.ql-button--primary:active {
+  background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+  color: var(--color-text-light);
+}
+.ql-button--primary.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-text-light);
+  border-color: var(--color-primary-disabled);
+  background: var(--color-primary-disabled);
+}
+.ql-button--primary.is-disabled:hover, .ql-button--primary.is-disabled:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-primary-disabled);
+  background: var(--color-primary-disabled);
+}
+
+.ql-button--primary.is-plain {
+  color: var(--color-primary);
+  background: var(--color-primary-shallow);
+  border-color: var(--color-primary);
+}
+.ql-button--primary.is-plain:hover, .ql-button--primary.is-plain:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+.ql-button--primary.is-plain:active {
+  color: var(--color-text-light);
+  border-color: var(--color-primary-active);
+  background: var(--color-primary-active);
+}
+.ql-button--primary.is-plain.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-primary-shallow-text-disabled);
+  border-color: var(--color-primary-shallow-border-disabled);
+  background: var(--color-primary-shallow-disabled);
+}
+.ql-button--primary.is-plain.is-disabled:hover, .ql-button--primary.is-plain.is-disabled:focus {
+  background: var(--color-primary-shallow-disabled);
+}
+
+.ql-button--primary.is-text {
+  color: var(--color-primary);
+  border-color: transparent;
+  background-color: transparent;
+}
+.ql-button--primary.is-text:hover, .ql-button--primary.is-text:focus {
+  color: var(--color-primary);
+  background-color: transparent;
+  border-color: transparent;
+}
+.ql-button--primary.is-text:active {
+  color: var(--color-primary-active);
+}
+.ql-button--primary.is-text.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-primary-shallow-text-disabled);
+}
+
+.ql-button--success {
+  color: var(--color-text-light);
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+.ql-button--success:hover, .ql-button--success:focus {
+  background: var(--color-success-hover);
+  border-color: var(--color-success-hover);
+  color: var(--color-text-light);
+}
+.ql-button--success:active {
+  background: var(--color-success-active);
+  border-color: var(--color-success-active);
+  color: var(--color-text-light);
+}
+.ql-button--success.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-text-light);
+  border-color: var(--color-success-disabled);
+  background: var(--color-success-disabled);
+}
+.ql-button--success.is-disabled:hover, .ql-button--success.is-disabled:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-success-disabled);
+  background: var(--color-success-disabled);
+}
+
+.ql-button--success.is-plain {
+  color: var(--color-success);
+  background: var(--color-success-shallow);
+  border-color: var(--color-success);
+}
+.ql-button--success.is-plain:hover, .ql-button--success.is-plain:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-success);
+  background-color: var(--color-success);
+}
+.ql-button--success.is-plain:active {
+  color: var(--color-text-light);
+  border-color: var(--color-success-active);
+  background: var(--color-success-active);
+}
+.ql-button--success.is-plain.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-success-shallow-text-disabled);
+  border-color: var(--color-success-shallow-border-disabled);
+  background: var(--color-success-shallow-disabled);
+}
+.ql-button--success.is-plain.is-disabled:hover, .ql-button--success.is-plain.is-disabled:focus {
+  background: var(--color-success-shallow-disabled);
+}
+
+.ql-button--success.is-text {
+  color: var(--color-success);
+  border-color: transparent;
+  background-color: transparent;
+}
+.ql-button--success.is-text:hover, .ql-button--success.is-text:focus {
+  color: var(--color-success);
+  background-color: transparent;
+  border-color: transparent;
+}
+.ql-button--success.is-text:active {
+  color: var(--color-success-active);
+}
+.ql-button--success.is-text.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-success-shallow-text-disabled);
+}
+
+.ql-button--info {
+  color: var(--color-text-light);
+  background-color: var(--color-info);
+  border-color: var(--color-info);
+}
+.ql-button--info:hover, .ql-button--info:focus {
+  background: var(--color-info-hover);
+  border-color: var(--color-info-hover);
+  color: var(--color-text-light);
+}
+.ql-button--info:active {
+  background: var(--color-info-active);
+  border-color: var(--color-info-active);
+  color: var(--color-text-light);
+}
+.ql-button--info.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-text-light);
+  border-color: var(--color-info-disabled);
+  background: var(--color-info-disabled);
+}
+.ql-button--info.is-disabled:hover, .ql-button--info.is-disabled:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-info-disabled);
+  background: var(--color-info-disabled);
+}
+
+.ql-button--info.is-plain {
+  color: var(--color-info);
+  background: var(--color-info-shallow);
+  border-color: var(--color-info);
+}
+.ql-button--info.is-plain:hover, .ql-button--info.is-plain:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-info);
+  background-color: var(--color-info);
+}
+.ql-button--info.is-plain:active {
+  color: var(--color-text-light);
+  border-color: var(--color-info-active);
+  background: var(--color-info-active);
+}
+.ql-button--info.is-plain.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-info-shallow-text-disabled);
+  border-color: var(--color-info-shallow-border-disabled);
+  background: var(--color-info-shallow-disabled);
+}
+.ql-button--info.is-plain.is-disabled:hover, .ql-button--info.is-plain.is-disabled:focus {
+  background: var(--color-info-shallow-disabled);
+}
+
+.ql-button--info.is-text {
+  color: var(--color-info);
+  border-color: transparent;
+  background-color: transparent;
+}
+.ql-button--info.is-text:hover, .ql-button--info.is-text:focus {
+  color: var(--color-info);
+  background-color: transparent;
+  border-color: transparent;
+}
+.ql-button--info.is-text:active {
+  color: var(--color-info-active);
+}
+.ql-button--info.is-text.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-info-shallow-text-disabled);
+}
+
+.ql-button--warning {
+  color: var(--color-text-light);
+  background-color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+.ql-button--warning:hover, .ql-button--warning:focus {
+  background: var(--color-warning-hover);
+  border-color: var(--color-warning-hover);
+  color: var(--color-text-light);
+}
+.ql-button--warning:active {
+  background: var(--color-warning-active);
+  border-color: var(--color-warning-active);
+  color: var(--color-text-light);
+}
+.ql-button--warning.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-text-light);
+  border-color: var(--color-warning-disabled);
+  background: var(--color-warning-disabled);
+}
+.ql-button--warning.is-disabled:hover, .ql-button--warning.is-disabled:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-warning-disabled);
+  background: var(--color-warning-disabled);
+}
+
+.ql-button--warning.is-plain {
+  color: var(--color-warning);
+  background: var(--color-warning-shallow);
+  border-color: var(--color-warning);
+}
+.ql-button--warning.is-plain:hover, .ql-button--warning.is-plain:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-warning);
+  background-color: var(--color-warning);
+}
+.ql-button--warning.is-plain:active {
+  color: var(--color-text-light);
+  border-color: var(--color-warning-active);
+  background: var(--color-warning-active);
+}
+.ql-button--warning.is-plain.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-warning-shallow-text-disabled);
+  border-color: var(--color-warning-shallow-border-disabled);
+  background: var(--color-warning-shallow-disabled);
+}
+.ql-button--warning.is-plain.is-disabled:hover, .ql-button--warning.is-plain.is-disabled:focus {
+  background: var(--color-warning-shallow-disabled);
+}
+
+.ql-button--warning.is-text {
+  color: var(--color-warning);
+  border-color: transparent;
+  background-color: transparent;
+}
+.ql-button--warning.is-text:hover, .ql-button--warning.is-text:focus {
+  color: var(--color-warning);
+  background-color: transparent;
+  border-color: transparent;
+}
+.ql-button--warning.is-text:active {
+  color: var(--color-warning-active);
+}
+.ql-button--warning.is-text.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-warning-shallow-text-disabled);
+}
+
+.ql-button--danger {
+  color: var(--color-text-light);
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+.ql-button--danger:hover, .ql-button--danger:focus {
+  background: var(--color-danger-hover);
+  border-color: var(--color-danger-hover);
+  color: var(--color-text-light);
+}
+.ql-button--danger:active {
+  background: var(--color-danger-active);
+  border-color: var(--color-danger-active);
+  color: var(--color-text-light);
+}
+.ql-button--danger.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-text-light);
+  border-color: var(--color-danger-disabled);
+  background: var(--color-danger-disabled);
+}
+.ql-button--danger.is-disabled:hover, .ql-button--danger.is-disabled:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-danger-disabled);
+  background: var(--color-danger-disabled);
+}
+
+.ql-button--danger.is-plain {
+  color: var(--color-danger);
+  background: var(--color-danger-shallow);
+  border-color: var(--color-danger);
+}
+.ql-button--danger.is-plain:hover, .ql-button--danger.is-plain:focus {
+  color: var(--color-text-light);
+  border-color: var(--color-danger);
+  background-color: var(--color-danger);
+}
+.ql-button--danger.is-plain:active {
+  color: var(--color-text-light);
+  border-color: var(--color-danger-active);
+  background: var(--color-danger-active);
+}
+.ql-button--danger.is-plain.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-danger-shallow-text-disabled);
+  border-color: var(--color-danger-shallow-border-disabled);
+  background: var(--color-danger-shallow-disabled);
+}
+.ql-button--danger.is-plain.is-disabled:hover, .ql-button--danger.is-plain.is-disabled:focus {
+  background: var(--color-danger-shallow-disabled);
+}
+
+.ql-button--danger.is-text {
+  color: var(--color-danger);
+  border-color: transparent;
+  background-color: transparent;
+}
+.ql-button--danger.is-text:hover, .ql-button--danger.is-text:focus {
+  color: var(--color-danger);
+  background-color: transparent;
+  border-color: transparent;
+}
+.ql-button--danger.is-text:active {
+  color: var(--color-danger-active);
+}
+.ql-button--danger.is-text.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-danger-shallow-text-disabled);
+}
+
+.ql-button--large {
+  padding: 0 18px;
+  height: 38px;
 }
 
 .ql-button--small {
-  padding: 9px 15px;
   font-size: 12px;
-  border-radius: 3px;
+  padding: 0 12px;
+  height: 24px;
 }
 
-.ql-button--mini {
-  padding: 7px 15px;
-  font-size: 12px;
-  border-radius: 3px;
+.ql-link {
+  cursor: pointer;
+  color: var(--color-text-dark);
+  outline: none;
+  transition: 0.1s;
+  font-size: 14px;
+  text-decoration: none;
+}
+.ql-link:hover, .ql-link:focus {
+  color: var(--color-primary);
+}
+.ql-link.is-underline:hover, .ql-link.is-underline:focus {
+  text-decoration: underline;
 }
 
-.ql-button.is-round {
-  border-radius: 20px;
+.ql-link.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-text-disabled);
+}
+.ql-link.is-disabled:hover, .ql-link.is-disabled:focus {
+  color: var(--color-text-disabled);
+  text-decoration: none;
+}
+
+.ql-link--primary {
+  color: var(--color-primary);
+}
+.ql-link--primary:hover, .ql-link--primary:focus {
+  color: var(--color-primary);
+}
+.ql-link--primary:active {
+  color: var(--color-primary-active);
+}
+.ql-link--primary.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-primary-shallow-text-disabled);
+}
+
+.ql-link--success {
+  color: var(--color-success);
+}
+.ql-link--success:hover, .ql-link--success:focus {
+  color: var(--color-success);
+}
+.ql-link--success:active {
+  color: var(--color-success-active);
+}
+.ql-link--success.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-success-shallow-text-disabled);
+}
+
+.ql-link--info {
+  color: var(--color-info);
+}
+.ql-link--info:hover, .ql-link--info:focus {
+  color: var(--color-info);
+}
+.ql-link--info:active {
+  color: var(--color-info-active);
+}
+.ql-link--info.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-info-shallow-text-disabled);
+}
+
+.ql-link--warning {
+  color: var(--color-warning);
+}
+.ql-link--warning:hover, .ql-link--warning:focus {
+  color: var(--color-warning);
+}
+.ql-link--warning:active {
+  color: var(--color-warning-active);
+}
+.ql-link--warning.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-warning-shallow-text-disabled);
+}
+
+.ql-link--danger {
+  color: var(--color-danger);
+}
+.ql-link--danger:hover, .ql-link--danger:focus {
+  color: var(--color-danger);
+}
+.ql-link--danger:active {
+  color: var(--color-danger-active);
+}
+.ql-link--danger.is-disabled {
+  cursor: not-allowed;
+  color: var(--color-danger-shallow-text-disabled);
 }

@@ -28,7 +28,5 @@ const classList = computed(() => {
 })
 </script>
 <style lang="scss">
-.ql-button {
-  margin: 15px;
-}
+
 </style>

@@ -1,6 +1,6 @@
 {
   "name": "@ql-ui/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ql-ui组件库",
   "main": "./core/lib/components/index.js",
   "module": "./core/es/components/index.js",

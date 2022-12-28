@@ -1,0 +1,56 @@
+@use './mixins/mixins.scss' as *;
+
+$typeList: 'primary', 'success', 'info', 'warning', 'danger';
+// 基础样式
+@include b(link) {
+  cursor: pointer;
+  color: var(--color-text-dark);
+  outline: none;
+  transition: .1s;
+  font-size: 14px;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: var(--color-primary);
+  }
+
+  // 下划线
+  @include when(underline) {
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  // 禁用样式
+  @include when(disabled) {
+    cursor: not-allowed;
+    color: var(--color-text-disabled);
+    &:hover, &:focus {
+      color: var(--color-text-disabled);
+      text-decoration: none;
+    }
+  }
+
+  // 状态样式
+  @each $type in $typeList {
+    @include m($type) {
+      color: var(--color-#{$type});
+      &:hover, &:focus {
+        color: var(--color-#{$type});
+      }
+      &:active {
+        color: var(--color-#{$type}-active);
+      }
+      // text 格式禁用样式
+      @include when(disabled) {
+        cursor: not-allowed;
+        color: var(--color-#{$type}-shallow-text-disabled);
+      }
+    }
+  }
+
+}
+
+
+
+

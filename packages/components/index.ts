@@ -6,12 +6,14 @@
  */
 import {mainInstall} from '@ql-ui/utils/withInstall'
 import {version} from './package.json'
-import QlButton from '@ql-ui/components/button'
+import QlButton from "./button";
+import QlLink from "./link";
 import '@ql-ui/theme-chalk/src/index.scss'
 
 
 const components = [
-  QlButton
+  QlButton,
+  QlLink
 ]
 const install = mainInstall(components)
 export default {

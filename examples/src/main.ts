@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
-import qlUi from "@ql-ui/components";
+import qlUi from "@ql-ui/cor";
+import "@ql-ui/cor/theme-chalk/style/index.css";
 import App from './App.vue'
 
-createApp(App).use(qlUi).mount('#app')
+const app = createApp(App)
+app.use(qlUi).mount('#app')
