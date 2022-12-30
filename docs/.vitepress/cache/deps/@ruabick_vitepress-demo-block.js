@@ -18,9 +18,9 @@ import {
   vShow,
   withCtx,
   withDirectives
-} from "./chunk-US7RK326.js";
+} from "./chunk-SC2KV4SP.js";
 
-// node_modules/.pnpm/@ruabick+vitepress-demo-block@0.3.1/node_modules/@ruabick/vitepress-demo-block/dist/vitepress-demo-block.js
+// ../node_modules/.pnpm/@ruabick+vitepress-demo-block@0.3.1/node_modules/@ruabick/vitepress-demo-block/dist/vitepress-demo-block.js
 var w = (e, o) => {
   const s = e.__vccOpts || e;
   for (const [l, n] of o)

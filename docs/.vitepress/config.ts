@@ -67,5 +67,9 @@ export default defineConfig({
         config: (md) => {
             applyPlugins(md);
         },
+        theme: {
+            light: 'one-dark-pro',
+            dark: 'material-darker',
+        },
     }
 })

@@ -1,9 +1,13 @@
 <script setup lang="ts">
-
+import {mainInstall} from '@ql-ui/utils/withInstall'
+const components = [
+  'QlButton',
+  mainInstall,
+  'QlLink'
+]
+const install = mainInstall(components);
 </script>
-
 <template>
-
   <div style="margin-bottom: 30px">
     基础按钮
     <ql-button>Default</ql-button>

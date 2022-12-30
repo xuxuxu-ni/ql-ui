@@ -7,6 +7,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
+import DefineOptions from 'unplugin-vue-define-options/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -46,6 +47,7 @@ export default defineConfig({
         dts({
             outputDir:'core/lib',
             tsConfigFilePath: '../tsconfig.json'
-        })
+        }),
+        DefineOptions()
     ]
 })

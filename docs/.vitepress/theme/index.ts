@@ -7,11 +7,9 @@
 import DefaultTheme from 'vitepress/theme'
 import DemoBlock from '@ruabick/vitepress-demo-block';
 import '@ruabick/vitepress-demo-block/dist/style.css';
-import qlUi from "@ql-ui/cor";
-import "@ql-ui/cor/theme-chalk/style/index.css";
-
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+import "./var.css"
+import qlUi from "@ql-ui/core";
+import "@ql-ui/core/theme-chalk/style/index.css";
 
 export default {
     ...DefaultTheme,

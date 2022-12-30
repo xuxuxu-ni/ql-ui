@@ -1,5 +1,5 @@
 <template>
-    <a :class="classList" :href="props.disabled ? null : props.href" :target="props.href ? '_blank': null">
+    <a :class="classList" :href="props.disabled || !props.href ? undefined : props.href">
       <slot>Default</slot>
     </a>
 </template>

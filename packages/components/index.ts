@@ -8,7 +8,6 @@ import {mainInstall} from '@ql-ui/utils/withInstall'
 import {version} from './package.json'
 import QlButton from "./button";
 import QlLink from "./link";
-import '@ql-ui/theme-chalk/src/index.scss'
 
 
 const components = [

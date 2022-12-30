@@ -1,13 +1,15 @@
 import { defineComponent, computed, openBlock, createElementBlock, normalizeClass, unref, renderSlot, createTextVNode } from "vue";
 import { createNamespace } from "../../../utils/create.js";
 import { buttonProps } from "./types.js";
+const __default__ = defineComponent({
+  name: "QlButton"
+});
 const _sfc_main = /* @__PURE__ */ defineComponent({
-  name: "QlButton",
+  ...__default__,
   props: buttonProps,
   setup(__props) {
     const props = __props;
     const bem = createNamespace("button");
-
     const classList = computed(() => {
       return [
         bem.b(),

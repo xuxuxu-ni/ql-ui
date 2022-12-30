@@ -9,11 +9,12 @@
     ".": {
       "import": "./core/es/components/index.js",
       "require": "./core/lib/components/index.js"
-    }
     },
+    "./*": "./*"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit && vite build && sass theme-chalk/src/index.scss ./theme-chalk/style/index.css --style compressed --no-source-map",
     "release": "release-it"
   },
   "files": [

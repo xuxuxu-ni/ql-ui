@@ -1,15 +1,16 @@
 import { defineComponent, computed, openBlock, createElementBlock, normalizeClass, unref, renderSlot, createTextVNode } from "vue";
 import { createNamespace } from "../../../utils/create.js";
 import { linkProps } from "./types.js";
+const _hoisted_1 = ["href"];
+const __default__ = defineComponent({
+  name: "QlLink"
+});
 const _sfc_main = /* @__PURE__ */ defineComponent({
-  __name: "link",
+  ...__default__,
   props: linkProps,
   setup(__props) {
     const props = __props;
     const bem = createNamespace("link");
-    defineOptions({
-      name: "QlLink"
-    });
     const classList = computed(() => {
       return [
         bem.b(),
@@ -20,12 +21,13 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("a", {
-        class: normalizeClass(unref(classList))
+        class: normalizeClass(unref(classList)),
+        href: props.disabled || !props.href ? void 0 : props.href
       }, [
         renderSlot(_ctx.$slots, "default", {}, () => [
           createTextVNode("Default")
         ])
-      ], 2);
+      ], 10, _hoisted_1);
     };
   }
 });

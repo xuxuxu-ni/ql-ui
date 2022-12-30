@@ -2,15 +2,15 @@
 const vue = require("vue");
 const create = require("../../../utils/create.js");
 const types = require("./types.js");
+const __default__ = vue.defineComponent({
+  name: "QlButton"
+});
 const _sfc_main = /* @__PURE__ */ vue.defineComponent({
-  __name: "button",
+  ...__default__,
   props: types.buttonProps,
   setup(__props) {
     const props = __props;
     const bem = create.createNamespace("button");
-    defineOptions({
-      name: "QlButton"
-    });
     const classList = vue.computed(() => {
       return [
         bem.b(),

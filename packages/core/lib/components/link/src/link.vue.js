@@ -2,15 +2,16 @@
 const vue = require("vue");
 const create = require("../../../utils/create.js");
 const types = require("./types.js");
+const _hoisted_1 = ["href"];
+const __default__ = vue.defineComponent({
+  name: "QlLink"
+});
 const _sfc_main = /* @__PURE__ */ vue.defineComponent({
-  __name: "link",
+  ...__default__,
   props: types.linkProps,
   setup(__props) {
     const props = __props;
     const bem = create.createNamespace("link");
-    defineOptions({
-      name: "QlLink"
-    });
     const classList = vue.computed(() => {
       return [
         bem.b(),
@@ -21,12 +22,13 @@ const _sfc_main = /* @__PURE__ */ vue.defineComponent({
     });
     return (_ctx, _cache) => {
       return vue.openBlock(), vue.createElementBlock("a", {
-        class: vue.normalizeClass(vue.unref(classList))
+        class: vue.normalizeClass(vue.unref(classList)),
+        href: props.disabled || !props.href ? void 0 : props.href
       }, [
         vue.renderSlot(_ctx.$slots, "default", {}, () => [
           vue.createTextVNode("Default")
         ])
-      ], 2);
+      ], 10, _hoisted_1);
     };
   }
 });
