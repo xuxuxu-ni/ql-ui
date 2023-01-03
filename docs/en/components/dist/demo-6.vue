@@ -4,5 +4,5 @@
 
 <template>
     <ql-button>Default</ql-button>
-  <span>The number is {{number}}</span>
+
 </template>

@@ -1,32 +1,30 @@
 ---
 layout: home
-
-title: 选项卡标题
-titleTemplate: 选项卡描述
+title: ql-ui
+titleTemplate: ql-ui 组件库
 editLink: true
 lastUpdated: true
 hero:
-    name: 组件库名称
-    text: 组件库文本
-    tagline: 组件库副标题描述
+    name: ql-ui
+    tagline: 一套基于vue3 + typescript 的组件库
     image:
         src: /logo.png
-        alt: YYG Admin UI
+        alt: ql-ui
     actions:
         - theme: brand
-          text: 快速开始
-          link: /guide/
+          text: 安装
+          link: /components/install
         - theme: alt
-          text: 组件
-          link: /components/
+          text: 文档
+          link: /components/button
 features:
 - icon: 🔨
-  title: 功能/特点 1
-  details: 功能/特点 1 具体描述信息。
+  title: 开发中
+  details: 欢迎加入,一起贡献丰富的组件
 - icon: 🧩
-  title: 功能/特点 2
-  details: 功能/特点 2 具体描述信息。
+  title: 轻量
+  details: 体积小,按需加载
 - icon: ✈️
-  title: 功能/特点 3。
-  details: 功能/特点 3 具体描述信息。
+  title: 使用方便
+  details: 快速构建你的项目
 ---

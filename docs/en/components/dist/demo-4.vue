@@ -4,5 +4,5 @@
 
 <template>
     <ql-button>Default</ql-button>
-  
+
 </template>

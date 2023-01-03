@@ -6,63 +6,44 @@
  */
 import { defineConfig, DefaultTheme } from 'vitepress'
 import { applyPlugins } from '@ruabick/md-demo-plugins';
-
+import sidebar from './sidebar'
 const nav: DefaultTheme.NavItem[] = [
-    { text: '指南', link: '/guide/' },
-    { text: '组件', link: '/components/basic-component1' },
+    { text: '文档', link: '/components/install' },
 ]
-const sidebar: DefaultTheme.Sidebar = {
-    '/guide': [
-        {
-            text: '指南',
-            items: [
-                { text: '组件库介绍', link: '/guide/' },
-                { text: '快速开始', link: '/guide/quickstart' },
-            ]
-        }
-    ],
-    '/components': [
-        {
-            text: '通用基础组件',
-            items: [
-                { text: '基础组件 1', link: '/components/basic-component1' },
-                { text: '基础组件 2', link: '/components/basic-component2' }
-            ]
-        },
-        {
-            text: '通用业务组件',
-            items: [
-                { text: '通用组件 1', link: '/components/common-component1' },
-                { text: '通用组件 2', link: '/components/common-component2' }
-            ]
-        },
-        {
-            text: '高级业务组件',
-            items: [
-                { text: '高级组件 1', link: '/components/pro-component1' },
-                { text: '高级组件 2', link: '/components/pro-component2' }
-            ]
-        }
-    ]
-}
-
 
 export default defineConfig({
-    title: '浏览器标题',
-    description: '浏览器描述',
-    lang: 'cn-ZH',
-    base: '/',
+    lang: 'zh-CN',
     lastUpdated: true,
-    themeConfig: {
-        logo: '/logo.png',
-        siteTitle: '组件库标题',
-        outline: 3,
-        socialLinks: [
-            { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-        ],
-        nav,
-        sidebar
+    base: '/',
+    locales: {
+        '/': {
+            lang: 'zh-CN',
+            title: 'ql-ui',
+            description: '',
+        },
+        '/en/': {
+            lang: 'en-US',
+            title: 'ql-ui',
+            description: '',
+        },
     },
+    themeConfig: {
+        logo: '/logo.svg',
+        localeLinks: {
+            text: '',
+            items: [
+                { text: '简体中文', link: '/' },
+                { text: 'English', link: '/en/' },
+            ],
+        },
+        nav,
+        sidebar,
+        socialLinks: [
+            { icon: 'github', link: 'https://github.com//ruabick-project' },
+        ],
+    },
+
+    vue: {},
     markdown: {
         config: (md) => {
             applyPlugins(md);
@@ -71,5 +52,10 @@ export default defineConfig({
             light: 'one-dark-pro',
             dark: 'material-darker',
         },
-    }
+    },
+    vite: {
+        server: {
+            port: 3100
+        }
+    },
 })

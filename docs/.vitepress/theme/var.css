@@ -62,3 +62,32 @@
   --vp-c-red-dimm-2: rgba(237, 60, 80, 0.25);
   --vp-c-red-dimm-3: rgba(237, 60, 80, 0.05);
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius:10px;
+  background: #ebedf1;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #ebedf1;
+}
+.is-home {
+  background-image: linear-gradient(to bottom right, white, #8faff7);
+}
+.VPFeatures {
+  margin-top: 30px;
+}
+.no-sidebar {
+  background: linear-gradient(to right, #f8fafe, #c1d3fa) !important;
+}
+.has-sidebar,.VPSidebar {
+  background-color: #ffffff !important;
+}
+.group {
+  border-top: 1px solid #ebedf1 !important;
+}

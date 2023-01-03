@@ -8,6 +8,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
 import DefineOptions from 'unplugin-vue-define-options/vite'
+import {genApiDoc} from "@ruabick/vite-plugin-gen-api-doc";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -40,6 +41,7 @@ export default defineConfig({
     },
     plugins: [
         vue(),
+        genApiDoc(),
         dts({
             outputDir:'core/es',
             tsConfigFilePath: '../tsconfig.json'
