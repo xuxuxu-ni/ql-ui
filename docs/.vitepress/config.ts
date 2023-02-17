@@ -39,10 +39,9 @@ export default defineConfig({
         nav,
         sidebar,
         socialLinks: [
-            { icon: 'github', link: 'https://github.com//ruabick-project' },
+            { icon: 'github', link: 'https://github.com/xuxuxu-ni/ql-ui' },
         ],
     },
-
     vue: {},
     markdown: {
         config: (md) => {

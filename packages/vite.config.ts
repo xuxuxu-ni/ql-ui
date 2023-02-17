@@ -7,8 +7,8 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
-import DefineOptions from 'unplugin-vue-define-options/vite'
-import {genApiDoc} from "@ruabick/vite-plugin-gen-api-doc";
+// @ts-expect-error
+import DefineOptions from 'unplugin-vue-macros'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,30 +18,30 @@ export default defineConfig({
         outDir: 'core',
         rollupOptions: {
             external: ['vue'],
-            input: ['./components/index.ts'],
             output: [
                 {
                     format: 'es',
                     entryFileNames: '[name].js',
                     preserveModules: true,
-                    dir: 'core/es',
+                    dir: 'core/es'
                 },
                 {
-                    format: 'cjs',
+                    format: 'umd',
                     entryFileNames: '[name].js',
-                    preserveModules: true,
+                    name: 'QlUi',
                     dir: 'core/lib',
+                    globals: {
+                        vue: 'Vue'
+                    }
                 }
             ]
         },
         lib: {
             entry: './components/index.ts',
-            formats: ['es', 'cjs']
         }
     },
     plugins: [
         vue(),
-        genApiDoc(),
         dts({
             outputDir:'core/es',
             tsConfigFilePath: '../tsconfig.json'

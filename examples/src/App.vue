@@ -25,7 +25,7 @@
   </div>
   <div style="margin-bottom: 30px">
     plain
-    <QlButton plain>Default</QlButton>
+    <ql-button plain>Default</ql-button>
     <ql-button type="primary" plain>primary</ql-button>
     <ql-button type="success" plain></ql-button>
     <ql-button type="info" plain></ql-button>

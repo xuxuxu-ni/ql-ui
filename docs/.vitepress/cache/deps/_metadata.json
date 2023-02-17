@@ -1,17 +1,17 @@
 {
-  "hash": "26ff72f5",
-  "browserHash": "45fa9854",
+  "hash": "d6d912c8",
+  "browserHash": "5c1556cd",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.2.45/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "96db5823",
+      "fileHash": "4c446640",
       "needsInterop": false
     },
     "@ruabick/vitepress-demo-block": {
       "src": "../../../../node_modules/.pnpm/@ruabick+vitepress-demo-block@0.3.1/node_modules/@ruabick/vitepress-demo-block/dist/vitepress-demo-block.js",
       "file": "@ruabick_vitepress-demo-block.js",
-      "fileHash": "2ffca300",
+      "fileHash": "5b68087f",
       "needsInterop": false
     }
   },

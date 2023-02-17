@@ -91,3 +91,27 @@
 .group {
   border-top: 1px solid #ebedf1 !important;
 }
+
+.dark .has-sidebar{
+  /*--vp-c-text-1: #213547*/
+}
+.dark .is-home {
+  background-image: linear-gradient(to bottom right, #03115b, #8faff7);
+}
+.dark .no-sidebar {
+  background: linear-gradient(to right, #0a1963, #4f67b0) !important;
+}
+.dark .VPFeature {
+  border: 1px solid #8397e8;
+  background-color: #556ac1;
+}
+.dark .has-sidebar,.VPSidebar {
+  background-color: var(--vp-c-bg-alpha-with-backdrop) !important;
+}
+.vitepress-demo .demo-actions {
+  justify-content: end
+}
+.vitepress-demo .demo-actions-tip {
+  font-size: 12px;
+  color: #556ac1;
+}

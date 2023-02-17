@@ -1,14 +1,14 @@
 {
   "name": "@ql-ui/core",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "ql-ui组件库",
-  "main": "./core/lib/components/index.js",
+  "main": "./core/lib/index.js",
   "module": "./core/es/components/index.js",
   "typings": "./core/es/components/index.d.ts",
   "exports": {
     ".": {
       "import": "./core/es/components/index.js",
-      "require": "./core/lib/components/index.js"
+      "require": "./core/lib/index.js"
     },
     "./*": "./*"
   },
@@ -19,6 +19,7 @@
   },
   "files": [
     "core",
+    "theme-chalk",
     "package.json"
   ],
   "author": {
